@@ -137,12 +137,18 @@ class DataManager {
     // create build only if the build does not exist in database
     async createBuild( data ) {
         const { url, buildName, buildNum } = data;
+        let query = { url, buildName, buildNum };
+
+        if (data.subId) {
+            query.subId = data.subId;
+        }
+
         const testResults = new TestResultsDB();
-        const result = await testResults.getData( { url, buildName, buildNum } ).toArray();
+        const result = await testResults.getData( query ).toArray();
         if ( result && result.length === 0 ) {
             const status = await testResults.populateDB( data );
             if ( status && status.insertedCount === 1 ) {
-                logger.debug( "createBuild", data.buildName, data.buildNum );
+                logger.debug( "createBuild", data.buildName, data.buildNum, query.subId ? data.subId : "" );
                 return status.insertedIds[0];
             }
             return -1;

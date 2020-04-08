@@ -1,0 +1,142 @@
+[
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 16371558,
+id: "1885",
+result: "ABORTED",
+timestamp: 1585673176898
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 2337926,
+id: "1884",
+result: "ABORTED",
+timestamp: 1585598437485
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 1897901,
+id: "1883",
+result: "ABORTED",
+timestamp: 1585512025982
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 14864893,
+id: "1882",
+result: "SUCCESS",
+timestamp: 1585386038583
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 13883206,
+id: "1881",
+result: "SUCCESS",
+timestamp: 1585339235133
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 15816450,
+id: "1880",
+result: "SUCCESS",
+timestamp: 1585299654124
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 15402705,
+id: "1879",
+result: "FAILURE",
+timestamp: 1585252827632
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 22670746,
+id: "1878",
+result: "SUCCESS",
+timestamp: 1585213243072
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 8194384,
+id: "1877",
+result: "FAILURE",
+timestamp: 1585143720886
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 10008952,
+id: "1876",
+result: "FAILURE",
+timestamp: 1585143690016
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 13206567,
+id: "1875",
+result: "FAILURE",
+timestamp: 1585126835448
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 17817030,
+id: "1874",
+result: "SUCCESS",
+timestamp: 1585082798871
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 4260002,
+id: "1873",
+result: "ABORTED",
+timestamp: 1585080023379
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 15806990,
+id: "1872",
+result: "SUCCESS",
+timestamp: 1585040459174
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 15883402,
+id: "1871",
+result: "FAILURE",
+timestamp: 1584993651307
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 13248455,
+id: "1870",
+result: "SUCCESS",
+timestamp: 1584907228038
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 14695469,
+id: "1869",
+result: "SUCCESS",
+timestamp: 1584734443756
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 15884836,
+id: "1868",
+result: "SUCCESS",
+timestamp: 1584694863332
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 19059727,
+id: "1867",
+result: "FAILURE",
+timestamp: 1584648052283
+},
+{
+_class: "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+duration: 13313699,
+id: "1866",
+result: "SUCCESS",
+timestamp: 1584561646835
+}
+]

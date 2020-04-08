@@ -9,8 +9,10 @@ class Test extends Parser {
     static canParse(buildName, output) {
         if (buildName.indexOf("Test-") === 0) {
             return true;
-        } else {
+        } else if (output) {
             return output.includes("Running test ");
+        } else {
+            return false;
         }
     }
     async parse(output) {
