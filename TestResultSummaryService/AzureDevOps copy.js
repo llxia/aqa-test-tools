@@ -5,6 +5,8 @@ const azdev = require( "azure-devops-node-api");
 const { logger } = require('./Utils');
 const ArgParser = require("./ArgParser");
 
+const fs = require('fs');
+
 const options = { request: { timeout: 2000 } };
 
 // Server connection may drop. If timeout, retry.
@@ -25,12 +27,29 @@ const retry = fn => {
     }
 }
 
+/**
+ * definition === build name
+ * 
+
+ */
 class AzureDevOps {
 
     constructor(options) {
         this.credentails = ArgParser.getConfig();
     }
 
+    /**
+     * 
+     * @param {*} url 
+     * @param {*} buildName 
+     * @return [] [{duration, id, result, timestamp}, ...]
+     * duration = finishTime - startTime
+     * result: SUCCESS === 2
+     * timestamp = startTime
+id: "1869",
+result: "SUCCESS",
+timestamp: 1584734443756
+     */
     async getAllBuilds(url, buildName) {
         // your collection url
         const orgUrl = "https://dev.azure.com/adoptopenjdk";
@@ -42,38 +61,48 @@ class AzureDevOps {
         const project = "AdoptOpenJDK";
         const defs = await build.getDefinitions(project);
 
+        //console.log(`dsfsgf***********${defs[0].name} (${defs[0].id}) ${defs[0].authoredBy.displayName}`);
+
+        // console.log(defs.length);
+        // defs.forEach(async defRef => {
+        //     console.log(`dsfsgf***********${defRef.name} (${defRef.id}) ${defRef.authoredBy.displayName}`);
+        //     //console.log('Code coverage for build' + defRef.id + ':', await testApiObject.getCodeCoverageSummary(project, defRef.id));
+        // });
+
+
+        const builds = await build.getBuilds(project, [3]);
+        builds.forEach(b => {
+            // console.log("builds url: ", b.url);
+            console.log("builds url: ", b);
+        });
+
+
         const testApiObject = await connection.getTestApi();
         const coreApiObject = await connection.getCoreApi();
         const teamProject = await coreApiObject.getProject(project);
 
-        const runs = await testApiObject.getTestRuns(project);
-        console.log('Current Runs:', runs);
+    //     const runs = await testApiObject.getTestRuns(project, "https://dev.azure.com/adoptopenjdk/_apis/build/Builds/58");
+    //     //console.log('Current Runs:', runs);
 
-        console.log(`dsfsgf***********${defs[0].name} (${defs[0].id}) ${defs[0].authoredBy.displayName}`);
-        console.log('Code coverage for build' + defs[0].id + ':', await testApiObject.getCodeCoverageSummary(project, defs[0].id));
-
-        // defs.forEach(async defRef => {
-        //     console.log(`dsfsgf***********${defRef.name} (${defRef.id}) ${defRef.authoredBy.displayName}`);
-        //     console.log('Code coverage for build' + defRef.id + ':', await testApiObject.getCodeCoverageSummary(project, defRef.id));
-        // });
-
-        // const builds = await build.getBuilds(project);
-        // builds.forEach(b => {
-        //     console.log("builds url: ", b.url);
-        // });
+    //    // 
+    //     //console.log('Code coverage for build' + defs[0].id + ':', await testApiObject.getCodeCoverageSummary(project, defs[0].id));
 
 
+    //     let vstsTask = await connection.getTaskAgentApi();
+    //     console.log("getTaskAgentApi");
+    //     // list tasks
+    //     let tasks = await vstsTask.getTaskDefinitions();
+    //     console.log(`You have ${tasks.length} task definition(s)`);
 
-    //common.heading('Get code coverage');
-    //const buildApiObject = await connection.getBuildApi();
-    //const defs2 = await buildApiObject.getDefinitions(project);
-   
-
-
-        // const logs = await build.getBuildLogs(project, 61);
-        // logs.forEach(log => {
-        //     console.log("log", log);
-        // });
+    //     // download a task
+    //     if (tasks.length > 0) {
+    //         let taskDefinition = tasks[0];
+    //         tasks.forEach( task => {
+    //         console.log(`dsfsgf***********${task.name} ${task.id}`);
+    //         //console.log('Code coverage for build' + defRef.id + ':', await testApiObject.getCodeCoverageSummary(project, defRef.id));
+    //     });
+            
+     //   }
     }
 
     // async getBuildOutput(url, buildName, buildNum) {

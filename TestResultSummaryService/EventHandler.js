@@ -1,8 +1,10 @@
 const Promise = require( 'bluebird' );
 const BuildProcessor = require( './BuildProcessor' );
 const BuildMonitor = require( './BuildMonitor' );
+const AzureBuildMonitor = require( './AzureBuildMonitor' );
 const { TestResultsDB, BuildListDB, AuditLogsDB } = require( './Database' );
 const { logger } = require( './Utils' );
+const { getCIProviderName, getCIProviderObj } = require(`./ciServers`);
 
 const elapsed = [2 * 60, 5 * 60, 30 * 60];
 /*
@@ -60,9 +62,23 @@ class EventHandler {
                     for ( let task of tasks ) {
                         try {
                             const buildMonitor = new BuildMonitor();
-                            await buildMonitor.deleteOldBuilds(task);
+                            // TODO: fix deleteOldBuilds 
+                            //await buildMonitor.deleteOldBuilds(task);
                             await buildMonitor.deleteOldAuditLogs();
-                            await buildMonitor.execute( task );
+                            
+                            const { buildUrl, type } = task;
+                            if (!buildUrl || !type) {
+                                logger.error("BuildMonitor: Invalid buildUrl and/or type", buildUrl, type);
+                            } else {
+                                const server = getCIProviderName(buildUrl);
+                                if (server === "Azure") {
+                                    const azureBuildMonitor = new AzureBuildMonitor();
+                                    await azureBuildMonitor.execute( task, 5 );
+                                } else {
+                                    await buildMonitor.execute( task, 5 );
+                                }
+                            }
+
                         } catch ( e ) {
                             logger.error( "Exception in BuildMonitor: ", e );
                             await new AuditLogsDB().insertAuditLogs({

@@ -1,0 +1,1192 @@
+Started by upstream project "Mirror-OMR-to-OpenJ9-OMR" build number 79690
+originally caused by:
+ Started by timer
+Obtained buildenv/jenkins/jobs/pipelines/Pipeline-Build-Test-All.groovy from git https://github.com/eclipse/openj9.git
+Running in Durability level: PERFORMANCE_OPTIMIZED
+[Pipeline] Start of Pipeline
+[Pipeline] echo
+Initialize all PARAMETERS...
+[Pipeline] echo
+Setup SETUP_LABEL:'worker'
+[Pipeline] echo
+TESTS_TARGETS:'sanity.functional'
+[Pipeline] echo
+PERSONAL_BUILD:''
+[Pipeline] echo
+BUILD_NODE_LABELS:''
+[Pipeline] echo
+TEST_NODE_LABELS:''
+[Pipeline] echo
+PROMOTE:'OMR'
+[Pipeline] echo
+SLACK_CHANNEL:''
+[Pipeline] echo
+BUILD_IDENTIFIER:'OMR-Acceptance'
+[Pipeline] echo
+AUTOMATIC_GENERATION:'true'
+[Pipeline] echo
+TIMEOUT_TIME: 12
+[Pipeline] echo
+TIMEOUT_UNIT: HOURS
+[Pipeline] echo
+CUSTOM_DESCRIPTION:''
+[Pipeline] echo
+PLATFORMS:'ppc64_aix,x86-64_linux,x86-64_linux_xl,x86-64_linux_cm,ppc64le_linux,ppc64le_linux_xl,s390x_linux,s390x_linux_xl,x86-64_windows,x86-32_windows,x86-64_mac'
+[Pipeline] echo
+ghprbPullId:''
+[Pipeline] echo
+ghprbGhRepository:''
+[Pipeline] echo
+ghprbCommentBody:''
+[Pipeline] echo
+ghprbTargetBranch:''
+[Pipeline] echo
+ghprbActualCommit:''
+[Pipeline] echo
+SCM_REPO:'https://github.com/eclipse/openj9.git'
+[Pipeline] echo
+SCM_BRANCH:'refs/heads/master'
+[Pipeline] echo
+SCM_REFSPEC:''
+[Pipeline] echo
+SUMMARY_AUTO_REFRESH_TIME:'5' [minutes]
+[Pipeline] echo
+ENABLE_SUMMARY_AUTO_REFRESH:'false'
+[Pipeline] timeout
+Timeout set to expire in 12 hr
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] node
+[2020-03-30T20:00:41.888Z] Running on worker-1 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance
+[Pipeline] {
+[Pipeline] checkout
+[2020-03-30T20:00:42.100Z] No credentials specified
+[2020-03-30T20:00:42.215Z] Cloning the remote Git repository
+[2020-03-30T20:00:42.216Z] Using no checkout clone with sparse checkout.
+[2020-03-30T20:00:42.251Z] Cloning repository https://github.com/eclipse/openj9.git
+[2020-03-30T20:00:42.263Z]  > git init /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance # timeout=10
+[2020-03-30T20:00:42.268Z] Using reference repository: /home/jenkins/openjdk_cache
+[2020-03-30T20:00:42.269Z] Fetching upstream changes from https://github.com/eclipse/openj9.git
+[2020-03-30T20:00:42.269Z]  > git --version # timeout=10
+[2020-03-30T20:00:42.271Z]  > git fetch --tags --progress -- https://github.com/eclipse/openj9.git +refs/heads/*:refs/remotes/origin/*
+[2020-03-30T20:00:44.344Z]  > git config remote.origin.url https://github.com/eclipse/openj9.git # timeout=10
+[2020-03-30T20:00:44.347Z]  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2020-03-30T20:00:44.416Z]  > git config remote.origin.url https://github.com/eclipse/openj9.git # timeout=10
+[2020-03-30T20:00:44.485Z] Fetching upstream changes from https://github.com/eclipse/openj9.git
+[2020-03-30T20:00:44.485Z]  > git fetch --tags --progress -- https://github.com/eclipse/openj9.git +refs/heads/*:refs/remotes/origin/*
+[2020-03-30T20:00:45.664Z] Checking out Revision e18e584ab83f926a9e9e03b63064bf1207dedac2 (refs/remotes/origin/master)
+[2020-03-30T20:00:45.865Z] Commit message: "Merge pull request #8804 from LinHu2016/GMP_clearingRS"
+[Pipeline] load
+[2020-03-30T20:00:45.561Z]  > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+[2020-03-30T20:00:45.630Z]  > git rev-parse refs/remotes/origin/refs/heads/master^{commit} # timeout=10
+[2020-03-30T20:00:45.700Z]  > git config core.sparsecheckout # timeout=10
+[2020-03-30T20:00:45.702Z]  > git config core.sparsecheckout true # timeout=10
+[2020-03-30T20:00:45.705Z]  > git read-tree -mu HEAD # timeout=10
+[2020-03-30T20:00:45.708Z] Command "git read-tree -mu HEAD" returned status code 128:
+[2020-03-30T20:00:45.708Z] stdout: 
+[2020-03-30T20:00:45.708Z] stderr: fatal: Not a valid object name HEAD
+[2020-03-30T20:00:45.708Z] 
+[2020-03-30T20:00:45.709Z]  > git checkout -f e18e584ab83f926a9e9e03b63064bf1207dedac2
+[Pipeline] { (buildenv/jenkins/common/variables-functions.groovy)
+[Pipeline] load
+[Pipeline] { (buildenv/jenkins/common/pipeline-functions.groovy)
+[Pipeline] }
+[Pipeline] // load
+[Pipeline] }
+[Pipeline] // load
+[Pipeline] load
+[Pipeline] { (buildenv/jenkins/common/pipeline-functions.groovy)
+[Pipeline] }
+[Pipeline] // load
+[Pipeline] echo
+[2020-03-30T20:00:55.076Z] RELEASES:'[8, 11]'
+[Pipeline] echo
+[2020-03-30T20:00:55.079Z] PLATFORMS:'[ppc64_aix, x86-64_linux, x86-64_linux_xl, x86-64_linux_cm, ppc64le_linux, ppc64le_linux_xl, s390x_linux, s390x_linux_xl, x86-64_windows, x86-32_windows, x86-64_mac]'
+[Pipeline] echo
+[2020-03-30T20:00:55.095Z] SPECS:'[ppc64_aix:[8, 11], x86-64_linux:[8, 11], x86-64_linux_xl:[8, 11], x86-64_linux_cm:[8, 11], ppc64le_linux:[8, 11], ppc64le_linux_xl:[8, 11], s390x_linux:[8, 11], s390x_linux_xl:[8, 11], x86-64_windows:[8, 11], x86-32_windows:[8], x86-64_mac:[8, 11]]'
+[Pipeline] echo
+[2020-03-30T20:00:55.104Z] VARIABLE_FILE:''
+[Pipeline] echo
+[2020-03-30T20:00:55.107Z] VENDOR_REPO:''
+[Pipeline] echo
+[2020-03-30T20:00:55.109Z] VENDOR_BRANCH:''
+[Pipeline] echo
+[2020-03-30T20:00:55.112Z] VENDOR_CREDENTIALS_ID:''
+[Pipeline] fileExists
+[Pipeline] echo
+[2020-03-30T20:00:55.181Z] Using variables file: buildenv/jenkins/variables/defaults.yml
+[Pipeline] readYaml
+[Pipeline] echo
+[2020-03-30T20:00:55.397Z] Using ARCHIVE_JAVADOC = false
+[Pipeline] echo
+[2020-03-30T20:00:55.492Z] Using OPENJDK_REPO = [8:[ppc64_aix:https://github.com/ibmruntimes/openj9-openjdk-jdk8.git, x86-64_linux:https://github.com/ibmruntimes/openj9-openjdk-jdk8.git, x86-64_linux_xl:https://github.com/ibmruntimes/openj9-openjdk-jdk8.git, x86-64_linux_cm:https://github.com/ibmruntimes/openj9-openjdk-jdk8.git, ppc64le_linux:https://github.com/ibmruntimes/openj9-openjdk-jdk8.git, ppc64le_linux_xl:https://github.com/ibmruntimes/openj9-openjdk-jdk8.git, s390x_linux:https://github.com/ibmruntimes/openj9-openjdk-jdk8.git, s390x_linux_xl:https://github.com/ibmruntimes/openj9-openjdk-jdk8.git, x86-64_windows:https://github.com/ibmruntimes/openj9-openjdk-jdk8.git, x86-32_windows:https://github.com/ibmruntimes/openj9-openjdk-jdk8.git, x86-64_mac:https://github.com/ibmruntimes/openj9-openjdk-jdk8.git], 11:[ppc64_aix:https://github.com/ibmruntimes/openj9-openjdk-jdk11.git, x86-64_linux:https://github.com/ibmruntimes/openj9-openjdk-jdk11.git, x86-64_linux_xl:https://github.com/ibmruntimes/openj9-openjdk-jdk11.git, x86-64_linux_cm:https://github.com/ibmruntimes/openj9-openjdk-jdk11.git, ppc64le_linux:https://github.com/ibmruntimes/openj9-openjdk-jdk11.git, ppc64le_linux_xl:https://github.com/ibmruntimes/openj9-openjdk-jdk11.git, s390x_linux:https://github.com/ibmruntimes/openj9-openjdk-jdk11.git, s390x_linux_xl:https://github.com/ibmruntimes/openj9-openjdk-jdk11.git, x86-64_windows:https://github.com/ibmruntimes/openj9-openjdk-jdk11.git, x86-64_mac:https://github.com/ibmruntimes/openj9-openjdk-jdk11.git]] OPENJDK_BRANCH = [8:[ppc64_aix:openj9, x86-64_linux:openj9, x86-64_linux_xl:openj9, x86-64_linux_cm:openj9, ppc64le_linux:openj9, ppc64le_linux_xl:openj9, s390x_linux:openj9, s390x_linux_xl:openj9, x86-64_windows:openj9, x86-32_windows:openj9, x86-64_mac:openj9], 11:[ppc64_aix:openj9, x86-64_linux:openj9, x86-64_linux_xl:openj9, x86-64_linux_cm:openj9, ppc64le_linux:openj9, ppc64le_linux_xl:openj9, s390x_linux:openj9, s390x_linux_xl:openj9, x86-64_windows:openj9, x86-64_mac:openj9]] OPENJDK_SHA = [8:[ppc64_aix:, x86-64_linux:, x86-64_linux_xl:, x86-64_linux_cm:, ppc64le_linux:, ppc64le_linux_xl:, s390x_linux:, s390x_linux_xl:, x86-64_windows:, x86-32_windows:, x86-64_mac:], 11:[ppc64_aix:, x86-64_linux:, x86-64_linux_xl:, x86-64_linux_cm:, ppc64le_linux:, ppc64le_linux_xl:, s390x_linux:, s390x_linux_xl:, x86-64_windows:, x86-64_mac:]]
+[Pipeline] echo
+[2020-03-30T20:00:55.505Z] Using OPENJ9_REPO = https://github.com/eclipse/openj9.git OPENJ9_BRANCH = master OPENJ9_SHA = 
+[Pipeline] echo
+[2020-03-30T20:00:55.507Z] Using OMR_REPO = https://github.com/eclipse/openj9-omr.git OMR_BRANCH = master OMR_SHA = 
+[Pipeline] echo
+[2020-03-30T20:00:56.651Z] ADOPTOPENJDK_MAP = [8:[repoUrl:https://github.com/AdoptOpenJDK/openjdk-tests.git, branch:master], 11:[repoUrl:https://github.com/AdoptOpenJDK/openjdk-tests.git, branch:master]]
+[Pipeline] echo
+[2020-03-30T20:00:56.659Z] TARGET_NAMES:'[sanity.functional]'
+[Pipeline] stage
+[Pipeline] { (Sniff Repos)
+[Pipeline] sh
+[2020-03-30T20:00:57.526Z] + git ls-remote https://github.com/ibmruntimes/openj9-openjdk-jdk8.git refs/heads/openj9
+[2020-03-30T20:00:57.527Z] + cut -c1-40
+[Pipeline] echo
+[2020-03-30T20:00:58.660Z] OPENJDK8_SHA:4f7bf238294bbec3e4701fb464976750ef2c3e25 - openj9-openjdk-jdk8
+[Pipeline] sh
+[2020-03-30T20:00:59.513Z] + git ls-remote https://github.com/ibmruntimes/openj9-openjdk-jdk11.git refs/heads/openj9
+[2020-03-30T20:00:59.514Z] + cut -c1-40
+[Pipeline] echo
+[2020-03-30T20:01:03.362Z] OPENJDK11_SHA:34c3dd7d55b36a29d76f5708f6bc299844455e20 - openj9-openjdk-jdk11
+[Pipeline] sh
+[2020-03-30T20:01:04.232Z] + git ls-remote https://github.com/eclipse/openj9.git refs/heads/master
+[2020-03-30T20:01:04.233Z] + cut -c1-40
+[Pipeline] sh
+[2020-03-30T20:01:07.031Z] + git ls-remote https://github.com/eclipse/openj9-omr.git refs/heads/master
+[2020-03-30T20:01:07.032Z] + cut -c1-40
+[Pipeline] echo
+[2020-03-30T20:01:07.673Z] OPENJ9_SHA:e18e584ab83f926a9e9e03b63064bf1207dedac2
+[Pipeline] echo
+[2020-03-30T20:01:07.675Z] OMR_SHA:6d4b6e48a9f658119dcc50641738c3b7f19da0fc
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stash
+[2020-03-30T20:01:07.859Z] Stashed 1 file(s)
+[Pipeline] cleanWs
+[2020-03-30T20:01:08.036Z] [WS-CLEANUP] Deleting project workspace...
+[2020-03-30T20:01:08.036Z] [WS-CLEANUP] Deferred wipeout is disabled by the job configuration...
+[2020-03-30T20:01:08.130Z] [WS-CLEANUP] done
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] parallel
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK8_ppc64_aix)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK11_ppc64_aix)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK8_x86-64_linux)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK11_x86-64_linux)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK8_x86-64_linux_xl)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK11_x86-64_linux_xl)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK8_x86-64_linux_cm)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK11_x86-64_linux_cm)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK8_ppc64le_linux)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK11_ppc64le_linux)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK8_ppc64le_linux_xl)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK11_ppc64le_linux_xl)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK8_s390x_linux)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK11_s390x_linux)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK8_s390x_linux_xl)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK11_s390x_linux_xl)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK8_x86-64_windows)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK11_x86-64_windows)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK8_x86-32_windows)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK8_x86-64_mac)
+[Pipeline] { (Branch: Pipeline_Build_Test_JDK11_x86-64_mac)
+[Pipeline] node
+[Pipeline] node
+[Pipeline] node
+[2020-03-30T20:01:08.160Z] Running on worker-1 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance
+[2020-03-30T20:01:08.162Z] Running on worker-1 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance@2
+[Pipeline] node
+[2020-03-30T20:01:08.162Z] Running on worker-2 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance
+[Pipeline] node
+[2020-03-30T20:01:08.165Z] Running on worker-1 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance@3
+[Pipeline] node
+[2020-03-30T20:01:08.166Z] Running on worker-2 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance@2
+[Pipeline] node
+[2020-03-30T20:01:08.168Z] Running on worker-2 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance@3
+[Pipeline] node
+[Pipeline] node
+[Pipeline] node
+[Pipeline] node
+[Pipeline] node
+[Pipeline] node
+[Pipeline] node
+[Pipeline] node
+[Pipeline] node
+[Pipeline] node
+[Pipeline] node
+[Pipeline] node
+[Pipeline] node
+[Pipeline] node
+[Pipeline] {
+[Pipeline] {
+[Pipeline] {
+[Pipeline] {
+[Pipeline] {
+[Pipeline] {
+[Pipeline] unstash
+[Pipeline] unstash
+[Pipeline] unstash
+[Pipeline] unstash
+[Pipeline] unstash
+[Pipeline] unstash
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[2020-03-30T20:01:08.640Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:08.682Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:08.695Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:08.739Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:08.746Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:08.760Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:10.405Z] Existing items:
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:10.406Z] Unreferenced items:
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:10.406Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[2020-03-30T20:01:10.410Z] Existing items:
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:10.410Z] Unreferenced items:
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:10.410Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[2020-03-30T20:01:10.503Z] Existing items:
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:10.504Z] Unreferenced items:
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:10.504Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[2020-03-30T20:01:10.695Z] Existing items:
+[2020-03-30T20:01:10.695Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:10.696Z] Unreferenced items:
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:10.696Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[2020-03-30T20:01:10.697Z] Existing items:
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:10.698Z] Unreferenced items:
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:10.698Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[2020-03-30T20:01:10.757Z] Existing items:
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:10.758Z] Unreferenced items:
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:10.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[2020-03-30T20:01:23.169Z] Still waiting to schedule task
+[2020-03-30T20:01:23.169Z] Waiting for next available executor on ‘worker’
+[2020-03-30T20:01:23.170Z] Still waiting to schedule task
+[2020-03-30T20:01:23.171Z] Waiting for next available executor on ‘worker’
+[2020-03-30T20:01:23.171Z] Still waiting to schedule task
+[2020-03-30T20:01:23.172Z] Waiting for next available executor on ‘worker’
+[2020-03-30T20:01:23.172Z] Still waiting to schedule task
+[2020-03-30T20:01:23.173Z] Waiting for next available executor on ‘worker’
+[2020-03-30T20:01:23.173Z] Still waiting to schedule task
+[2020-03-30T20:01:23.173Z] Waiting for next available executor on ‘worker’
+[2020-03-30T20:01:23.173Z] Still waiting to schedule task
+[2020-03-30T20:01:23.174Z] Still waiting to schedule task
+[2020-03-30T20:01:23.174Z] Waiting for next available executor on ‘worker’
+[2020-03-30T20:01:23.175Z] Still waiting to schedule task
+[2020-03-30T20:01:23.175Z] Waiting for next available executor on ‘worker’
+[2020-03-30T20:01:23.176Z] Waiting for next available executor on ‘worker’
+[2020-03-30T20:01:23.177Z] Still waiting to schedule task
+[2020-03-30T20:01:23.176Z] Still waiting to schedule task
+[2020-03-30T20:01:23.178Z] Still waiting to schedule task
+[2020-03-30T20:01:23.178Z] Waiting for next available executor on ‘worker’
+[2020-03-30T20:01:23.178Z] Waiting for next available executor on ‘worker’
+[2020-03-30T20:01:23.179Z] Waiting for next available executor on ‘worker’
+[2020-03-30T20:01:23.181Z] Still waiting to schedule task
+[2020-03-30T20:01:23.179Z] Still waiting to schedule task
+[2020-03-30T20:01:23.183Z] Still waiting to schedule task
+[2020-03-30T20:01:23.180Z] Still waiting to schedule task
+[2020-03-30T20:01:23.182Z] Waiting for next available executor on ‘worker’
+[2020-03-30T20:01:23.183Z] Waiting for next available executor on ‘worker’
+[2020-03-30T20:01:23.184Z] Waiting for next available executor on ‘worker’
+[2020-03-30T20:01:23.184Z] Waiting for next available executor on ‘worker’
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[2020-03-30T20:01:25.660Z] Running on worker-1 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance
+[Pipeline] // node
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK8_ppc64_aix)
+[Pipeline] unstash
+[Pipeline] build
+[2020-03-30T20:01:25.688Z] Scheduling project: Pipeline_Build_Test_JDK8_ppc64_aix
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[2020-03-30T20:01:26.068Z] Running on worker-1 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance@3
+[Pipeline] // node
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK11_x86-64_linux)
+[Pipeline] unstash
+[2020-03-30T20:01:26.095Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[Pipeline] build
+[2020-03-30T20:01:26.101Z] Scheduling project: Pipeline_Build_Test_JDK11_x86-64_linux
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[2020-03-30T20:01:26.444Z] Running on worker-1 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance@2
+[Pipeline] // node
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK11_ppc64_aix)
+[Pipeline] unstash
+[Pipeline] build
+[2020-03-30T20:01:26.478Z] Scheduling project: Pipeline_Build_Test_JDK11_ppc64_aix
+[2020-03-30T20:01:26.495Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:26.515Z] Existing items:
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:26.516Z] Unreferenced items:
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:26.516Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[2020-03-30T20:01:26.814Z] Running on worker-2 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance@3
+[Pipeline] // node
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK11_x86-64_linux_xl)
+[Pipeline] unstash
+[Pipeline] build
+[2020-03-30T20:01:26.854Z] Scheduling project: Pipeline_Build_Test_JDK11_x86-64_linux_xl
+[2020-03-30T20:01:26.879Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:26.931Z] Existing items:
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:26.932Z] Unreferenced items:
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:26.932Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[2020-03-30T20:01:27.181Z] Running on worker-2 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance@2
+[Pipeline] // node
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK8_x86-64_linux_xl)
+[Pipeline] unstash
+[Pipeline] build
+[2020-03-30T20:01:27.213Z] Scheduling project: Pipeline_Build_Test_JDK8_x86-64_linux_xl
+[2020-03-30T20:01:27.253Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:27.287Z] Existing items:
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:27.287Z] Unreferenced items:
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:27.287Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[2020-03-30T20:01:27.569Z] Running on worker-2 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance
+[Pipeline] // node
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK8_x86-64_linux)
+[Pipeline] unstash
+[Pipeline] build
+[2020-03-30T20:01:27.602Z] Scheduling project: Pipeline_Build_Test_JDK8_x86-64_linux
+[2020-03-30T20:01:27.664Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[2020-03-30T20:01:27.757Z] Existing items:
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:27.758Z] Unreferenced items:
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:27.758Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[2020-03-30T20:01:27.952Z] Running on worker-1 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance
+[Pipeline] // node
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK8_x86-64_linux_cm)
+[Pipeline] unstash
+[Pipeline] build
+[2020-03-30T20:01:27.991Z] Scheduling project: Pipeline_Build_Test_JDK8_x86-64_linux_cm
+[2020-03-30T20:01:28.007Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:28.053Z] Existing items:
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:28.054Z] Unreferenced items:
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:28.054Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[2020-03-30T20:01:28.349Z] Running on worker-1 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance@3
+[Pipeline] // node
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK11_x86-64_linux_cm)
+[Pipeline] unstash
+[Pipeline] build
+[2020-03-30T20:01:28.381Z] Scheduling project: Pipeline_Build_Test_JDK11_x86-64_linux_cm
+[2020-03-30T20:01:28.396Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:28.436Z] Existing items:
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:28.437Z] Unreferenced items:
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:28.437Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[2020-03-30T20:01:28.746Z] Running on worker-1 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance@2
+[Pipeline] // node
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK8_ppc64le_linux)
+[Pipeline] unstash
+[Pipeline] build
+[2020-03-30T20:01:28.776Z] Scheduling project: Pipeline_Build_Test_JDK8_ppc64le_linux
+[2020-03-30T20:01:28.778Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:28.869Z] Existing items:
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:28.870Z] Unreferenced items:
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:28.870Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[2020-03-30T20:01:29.137Z] Running on worker-2 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance@3
+[Pipeline] // node
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK11_ppc64le_linux)
+[Pipeline] unstash
+[Pipeline] build
+[2020-03-30T20:01:29.176Z] Scheduling project: Pipeline_Build_Test_JDK11_ppc64le_linux
+[2020-03-30T20:01:29.188Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:29.217Z] Existing items:
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:29.217Z] Unreferenced items:
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:29.217Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[2020-03-30T20:01:29.505Z] Running on worker-2 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance@2
+[Pipeline] // node
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK8_ppc64le_linux_xl)
+[Pipeline] unstash
+[Pipeline] build
+[2020-03-30T20:01:29.534Z] Scheduling project: Pipeline_Build_Test_JDK8_ppc64le_linux_xl
+[2020-03-30T20:01:29.591Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:29.604Z] Existing items:
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:29.605Z] Unreferenced items:
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:29.605Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[2020-03-30T20:01:29.898Z] Running on worker-2 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance
+[Pipeline] // node
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK11_ppc64le_linux_xl)
+[Pipeline] unstash
+[Pipeline] build
+[2020-03-30T20:01:29.925Z] Scheduling project: Pipeline_Build_Test_JDK11_ppc64le_linux_xl
+[2020-03-30T20:01:29.954Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:30.015Z] Existing items:
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:30.016Z] Unreferenced items:
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:30.016Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[2020-03-30T20:01:30.248Z] Running on worker-1 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance
+[Pipeline] // node
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK8_s390x_linux)
+[Pipeline] unstash
+[Pipeline] build
+[2020-03-30T20:01:30.288Z] Scheduling project: Pipeline_Build_Test_JDK8_s390x_linux
+[2020-03-30T20:01:30.330Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:30.334Z] Existing items:
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[2020-03-30T20:01:30.335Z] Unreferenced items:
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:30.335Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[2020-03-30T20:01:30.608Z] Running on worker-1 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance@3
+[Pipeline] // node
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK11_s390x_linux)
+[Pipeline] unstash
+[Pipeline] build
+[2020-03-30T20:01:30.638Z] Scheduling project: Pipeline_Build_Test_JDK11_s390x_linux
+[2020-03-30T20:01:30.676Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:30.688Z] Existing items:
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[2020-03-30T20:01:30.689Z] Unreferenced items:
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:30.689Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[Pipeline] // node
+[2020-03-30T20:01:31.004Z] Running on worker-1 in /home/jenkins/jenkins-agent/workspace/Pipeline-OMR-Acceptance@2
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK8_s390x_linux_xl)
+[Pipeline] unstash
+[Pipeline] build
+[2020-03-30T20:01:31.035Z] Scheduling project: Pipeline_Build_Test_JDK8_s390x_linux_xl
+[2020-03-30T20:01:31.069Z] Existing items:
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[2020-03-30T20:01:31.069Z] Unreferenced items:
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:31.069Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:31.077Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[Pipeline] retry
+[Pipeline] {
+[Pipeline] jobDsl
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK11_s390x_linux_xl)
+[Pipeline] build
+[2020-03-30T20:01:31.416Z] Scheduling project: Pipeline_Build_Test_JDK11_s390x_linux_xl
+[2020-03-30T20:01:31.441Z] Processing DSL script buildenv/jenkins/jobs/pipelines/Pipeline_Template.groovy
+[2020-03-30T20:01:31.470Z] Existing items:
+[2020-03-30T20:01:31.470Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[2020-03-30T20:01:31.471Z] Unreferenced items:
+[2020-03-30T20:01:31.471Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:31.501Z] Starting building: Pipeline_Build_Test_JDK11_x86-64_linux #1755
+[2020-03-30T20:01:31.515Z] Starting building: Pipeline_Build_Test_JDK8_ppc64_aix #1495
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK8_x86-64_windows)
+[Pipeline] build
+[2020-03-30T20:01:31.813Z] Scheduling project: Pipeline_Build_Test_JDK8_x86-64_windows
+[2020-03-30T20:01:31.839Z] Existing items:
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64_aix'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_ppc64le_linux_xl'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_s390x_linux_xl'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_cm'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_linux_xl'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_mac'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK11_x86-64_windows'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64_aix'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_ppc64le_linux_xl'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_s390x_linux_xl'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-32_windows'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_cm'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_linux_xl'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_mac'}
+[2020-03-30T20:01:31.840Z]     GeneratedJob{name='Pipeline_Build_Test_JDK8_x86-64_windows'}
+[2020-03-30T20:01:31.863Z] Starting building: Pipeline_Build_Test_JDK11_ppc64_aix #1510
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK11_x86-64_windows)
+[Pipeline] build
+[2020-03-30T20:01:32.201Z] Scheduling project: Pipeline_Build_Test_JDK11_x86-64_windows
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK8_x86-32_windows)
+[Pipeline] build
+[2020-03-30T20:01:32.606Z] Scheduling project: Pipeline_Build_Test_JDK8_x86-32_windows
+[2020-03-30T20:01:32.679Z] Starting building: Pipeline_Build_Test_JDK11_x86-64_linux_xl #1403
+[2020-03-30T20:01:32.744Z] Starting building: Pipeline_Build_Test_JDK8_x86-64_linux #1766
+[2020-03-30T20:01:32.921Z] Starting building: Pipeline_Build_Test_JDK8_x86-64_linux_xl #1390
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK8_x86-64_mac)
+[Pipeline] build
+[2020-03-30T20:01:33.012Z] Scheduling project: Pipeline_Build_Test_JDK8_x86-64_mac
+[2020-03-30T20:01:33.103Z] Starting building: Pipeline_Build_Test_JDK8_x86-64_linux_cm #977
+[Pipeline] }
+[Pipeline] // retry
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] stage
+[Pipeline] { (Pipeline_Build_Test_JDK11_x86-64_mac)
+[Pipeline] build
+[2020-03-30T20:01:33.382Z] Scheduling project: Pipeline_Build_Test_JDK11_x86-64_mac
+[2020-03-30T20:01:33.528Z] Starting building: Pipeline_Build_Test_JDK11_x86-64_linux_cm #1012
+[2020-03-30T20:01:34.796Z] Starting building: Pipeline_Build_Test_JDK8_ppc64le_linux #1789
+[2020-03-30T20:01:35.214Z] Starting building: Pipeline_Build_Test_JDK11_ppc64le_linux #1823
+[2020-03-30T20:01:35.288Z] Starting building: Pipeline_Build_Test_JDK8_ppc64le_linux_xl #404
+[2020-03-30T20:01:35.339Z] Starting building: Pipeline_Build_Test_JDK11_ppc64le_linux_xl #407
+[2020-03-30T20:01:35.467Z] Starting building: Pipeline_Build_Test_JDK8_s390x_linux #1596
+[2020-03-30T20:01:35.957Z] Starting building: Pipeline_Build_Test_JDK11_s390x_linux #1549
+[2020-03-30T20:01:36.736Z] Starting building: Pipeline_Build_Test_JDK8_s390x_linux_xl #400
+[2020-03-30T20:01:37.234Z] Starting building: Pipeline_Build_Test_JDK8_x86-64_windows #1681
+[2020-03-30T20:01:37.582Z] Starting building: Pipeline_Build_Test_JDK11_x86-64_windows #1590
+[2020-03-30T20:01:37.901Z] Starting building: Pipeline_Build_Test_JDK8_x86-32_windows #1493
+[2020-03-30T20:01:38.125Z] Starting building: Pipeline_Build_Test_JDK11_s390x_linux_xl #401
+[2020-03-30T20:01:39.063Z] Starting building: Pipeline_Build_Test_JDK11_x86-64_mac #1448
+[2020-03-30T20:01:39.488Z] Starting building: Pipeline_Build_Test_JDK8_x86-64_mac #1425
+Aborted by Peter Shipton
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:25:42.996Z] Failed in branch Pipeline_Build_Test_JDK11_s390x_linux
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:25:43.055Z] Failed in branch Pipeline_Build_Test_JDK11_ppc64le_linux_xl
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:25:43.121Z] Failed in branch Pipeline_Build_Test_JDK8_ppc64le_linux_xl
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:25:43.199Z] Failed in branch Pipeline_Build_Test_JDK11_ppc64le_linux
+[Pipeline] }
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:25:43.349Z] Failed in branch Pipeline_Build_Test_JDK8_x86-64_linux_cm
+[Pipeline] }
+[2020-03-30T20:25:43.372Z] Failed in branch Pipeline_Build_Test_JDK8_ppc64le_linux
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:25:44.295Z] Failed in branch Pipeline_Build_Test_JDK8_ppc64_aix
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:25:44.568Z] Failed in branch Pipeline_Build_Test_JDK11_ppc64_aix
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:25:51.911Z] Failed in branch Pipeline_Build_Test_JDK8_s390x_linux_xl
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:25:52.004Z] Failed in branch Pipeline_Build_Test_JDK8_s390x_linux
+Click here to forcibly terminate running steps
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:26:35.929Z] Failed in branch Pipeline_Build_Test_JDK8_x86-64_mac
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:26:36.023Z] Failed in branch Pipeline_Build_Test_JDK11_x86-64_linux_cm
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:26:43.672Z] Failed in branch Pipeline_Build_Test_JDK11_x86-64_mac
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:26:56.586Z] Failed in branch Pipeline_Build_Test_JDK8_x86-32_windows
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:26:56.892Z] Failed in branch Pipeline_Build_Test_JDK8_x86-64_windows
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:26:58.905Z] Failed in branch Pipeline_Build_Test_JDK11_x86-64_linux_xl
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:27:07.351Z] Failed in branch Pipeline_Build_Test_JDK11_x86-64_windows
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:27:09.590Z] Failed in branch Pipeline_Build_Test_JDK8_x86-64_linux_xl
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:27:38.556Z] Failed in branch Pipeline_Build_Test_JDK8_x86-64_linux
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:27:38.707Z] Failed in branch Pipeline_Build_Test_JDK11_x86-64_linux
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[2020-03-30T20:39:34.897Z] Failed in branch Pipeline_Build_Test_JDK11_s390x_linux_xl
+[Pipeline] // parallel
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // timeout
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline-OMR-Acceptance: 0.019 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK8_ppc64_aix: 0.001 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK11_ppc64_aix: 0.001 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK8_ppc64le_linux: 0.001 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK11_ppc64le_linux: 0.002 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK8_ppc64le_linux_xl: 0.001 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK11_ppc64le_linux_xl: 0.001 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK8_s390x_linux: 0.002 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK11_s390x_linux: 0.002 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK8_s390x_linux_xl: 0.002 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK11_s390x_linux_xl: 0.001 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK8_x86-32_windows: 0.001 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK8_x86-64_linux: 0.002 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK11_x86-64_linux: 0.001 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK8_x86-64_linux_cm: 0.002 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK11_x86-64_linux_cm: 0.002 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK8_x86-64_linux_xl: 0.001 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK11_x86-64_linux_xl: 0.002 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK8_x86-64_mac: 0.001 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK11_x86-64_mac: 0.001 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK8_x86-64_windows: 0.002 seconds
+[Pipeline] echo
+Time spent fetching downstream jobs for Pipeline_Build_Test_JDK11_x86-64_windows: 0.001 seconds
+[Pipeline] End of Pipeline
+ERROR: Pipeline_Build_Test_JDK11_s390x_linux #1549 - OMR-Acceptance completed with status ABORTED (propagate: false to ignore)
+Finished: ABORTED
