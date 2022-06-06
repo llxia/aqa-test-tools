@@ -4,7 +4,7 @@ import { getParams, params } from '../utils/query';
 import { Tooltip, Card, Alert } from 'antd';
 import { CopyOutlined } from '@ant-design/icons';
 import TestBreadcrumb from './TestBreadcrumb';
-import { fetchData } from '../utils/Utils';
+import { fetchData, getInfoFromBuildName } from '../utils/Utils';
 
 export default class ReleaseSummary extends Component {
     state = {
@@ -146,7 +146,15 @@ export default class ReleaseSummary extends Component {
 
                 report += `${nl} --- ${nl}`;
                 Object.keys(failedTestSummary)
-                    .sort()
+                    .sort((a, b) => {
+                        const platformA = getInfoFromBuildName(a).platform;
+                        const platformB = getInfoFromBuildName(b).platform;
+                        return platformA > platformB
+                            ? 1
+                            : platformB > platformA
+                            ? -1
+                            : 0;
+                    })
                     .forEach((buildName) => {
                         report += failedTestSummary[buildName];
                     });
