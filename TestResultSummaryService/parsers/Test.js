@@ -171,6 +171,14 @@ class Test extends Parser {
             type: isPerf ? 'Perf' : 'Test',
         };
     }
+
+    isParentBuild(output) {
+        if (output) {
+            return output.includes('Starting building:');
+        } else {
+            return false;
+        }
+    }
 }
 
 module.exports = Test;

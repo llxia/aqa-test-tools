@@ -50,7 +50,11 @@ const getSHA = (type, javaVersion) => {
     return null;
 };
 
+const isNetlify = process.env.REACT_APP_IS_NETLIFY;
 export const fetchData = async (url) => {
+    if (isNetlify) {
+        url = 'https://trss.adoptium.net' + url;
+    }
     try {
         const response = await fetch(url, {
             method: 'get',

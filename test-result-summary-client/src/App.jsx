@@ -22,7 +22,7 @@ import {
     TopLevelBuilds,
     ResultSummary,
     ReleaseSummary,
-    BuildTreeView
+    BuildTreeView,
 } from './Build/';
 import { SearchResult } from './Search/';
 import { Settings } from './Settings/';
@@ -73,7 +73,7 @@ export default class App extends Component {
                                 key="2"
                             >
                                 <Link to="/dashboard">
-                                    Test Results Summary Service
+                                    Test Results Summary Service - v2
                                 </Link>
                             </Menu.Item>
                         </Menu>

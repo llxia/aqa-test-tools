@@ -1,5 +1,5 @@
 const winston = require('winston');
-const logLevel = process.env.LOG_LEVEL || 'verbose';
+const logLevel = process.env.LOG_LEVEL || 'debug';
 
 const tsFormat = () => new Date().toLocaleTimeString();
 const logger = new winston.Logger({

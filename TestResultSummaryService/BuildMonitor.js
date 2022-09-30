@@ -44,7 +44,7 @@ class BuildMonitor {
          * all remaining builds that has a lower build number is in
          * db.
          */
-        const limit = Math.min(5, allBuilds.length);
+        const limit = Math.min(20, allBuilds.length);
         const testResults = new TestResultsDB();
         for (let i = 0; i < limit; i++) {
             const buildNum = parseInt(allBuilds[i].id, 10);

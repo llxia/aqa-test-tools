@@ -22,7 +22,42 @@ class DataManager {
     }
 
     async parseOutput(buildName, output) {
-        let parserType = this.findParserType(buildName, output);
+        console.log('**********parseOutput', buildName);
+        const parserTypes = await Promise.all(
+            Object.keys(Parsers).map(async (type) => {
+                console.log('****type', type);
+                if (Parsers[type].canParse(buildName, output)) {
+                    const parser = new Parsers[type](buildName);
+                    console.log('****parser', parser);
+                    return await parser.parse(output);
+                    // return type;
+                }
+            })
+        );
+        console.log('*********parserTypes', parserTypes);
+        let results = parserTypes.filter((element) => {
+            return element !== undefined;
+        });
+        console.log('*********parserTypes2', results);
+        if (results.length === 0) {
+            const parser = new DefaultParser();
+            results = await parser.parse(output);
+            console.log('*********parserTypes3', results);
+        }
+
+        const obj = Object.assign.apply({}, results);
+        // console.log('parserTypes', parserTypes);
+        // let obj = {};
+        // parserTypes.forEach(async (type) => {
+        //     const parser = new Parsers[type](buildName);
+        //     const output = await parser.parse(output);
+        //     obj = { ...obj, ...output };
+        // });
+
+        console.log('*********object', obj);
+
+        return obj;
+        /* let parserType = this.findParserType(buildName, output);
         let parser;
         if (parserType) {
             parser = new Parsers[parserType](buildName);
@@ -31,7 +66,7 @@ class DataManager {
             parserType = 'Default';
         }
         const obj = await parser.parse(output);
-        return { parserType, ...obj };
+        return { parserType, ...obj };*/
     }
 
     async updateOutput(data) {
@@ -169,7 +204,8 @@ class DataManager {
                 update.buildOutputId = outputId;
             }
             update.hasChildren = true;
-        } else if (tests && tests.length > 0) {
+        }
+        if (tests && tests.length > 0) {
             const testsObj = await Promise.all(
                 tests.map(async ({ testOutput, ...test }) => {
                     let testOutputId = null;
@@ -199,7 +235,8 @@ class DataManager {
             );
             update.tests = testsObj;
             update.hasChildren = false;
-        } else if (build === null) {
+        }
+        if (build === null) {
             const buildOutputId = await this.updateOutput({ id: null, output });
             update.buildOutputId = buildOutputId;
             update.hasChildren = false;

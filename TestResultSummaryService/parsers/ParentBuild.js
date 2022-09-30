@@ -13,6 +13,19 @@ class ParentBuild extends Parser {
             return false;
         }
     }
+
+    /*    static canParse(buildName, output) {
+        if (output) {
+            let m = null;
+            while ((m = regexBuilds.exec(output)) !== null) {
+                const childBuildName = m[3];
+                if (!childBuildName.includes('_rerun')) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }*/
     parse(output) {
         let openJ9Sha = null;
         let openJdkSha = null;
