@@ -29,7 +29,14 @@ class Test extends Parser {
         tests.jdkDate = jdkDate;
         tests.sdkResource = sdkResource;
         tests.machine = this.extractMachineInfo(output);
-        tests.testSummary = this.extractTestSummary(output);
+        const tkgTestSummary = this.extractTestSummary(output);
+        // If there is test summary from TKG, use it. Otherwise, use test summary from TRSS.
+        // If test build gets aborted, we may not have test summary from TKG.
+        // If console output is not correct, test summary from TRSS may not be correct.
+        // If TKG test summary exists, use test summary from TKG.
+        if (tkgTestSummary) {
+            tests.testSummary = tkgTestSummary;
+        }
         tests.startBy = this.extractStartedBy(output);
         tests.artifactory = this.extractArtifact(output);
         tests.rerunLink = this.extractRerunLink(output);
@@ -49,6 +56,12 @@ class Test extends Parser {
             finishTime,
             testResultRegex;
         let results = [];
+        let total = 0,
+            executed = 0,
+            passed = 0,
+            failed = 0,
+            skipped = 0,
+            disabled = 0;
         const readline = require('readline');
         const stream = require('stream');
         let buf = Buffer.from(str);
@@ -111,9 +124,24 @@ class Test extends Parser {
                                 : null,
                         startTime: parseInt(startTime),
                     });
+                    if (testResult == 'FAILED') {
+                        executed++;
+                        failed++;
+                    } else if (testResult == 'PASSED') {
+                        executed++;
+                        passed++;
+                    } else if (testResult == 'DISABLED') {
+                        disabled++;
+                    } else if (testResult == 'SKIPPED') {
+                        skipped++;
+                    }
+                    total++;
+
+                    // reset values
                     testName = null;
                     testStr = null;
                     nonTestStr = '';
+                    testResult = '';
                 }
             } else {
                 if (!preTestDone || !postTestDone) {
@@ -131,6 +159,9 @@ class Test extends Parser {
                 testData: null,
                 startTime,
             });
+            executed++;
+            failed++;
+            total++;
         } else if (!results || results.length === 0) {
             // No test has been executed after reading all test output.
             results.push({
@@ -170,6 +201,16 @@ class Test extends Parser {
             tests: results,
             ...(buildResult && { buildResult }),
             type: isPerf ? 'Perf' : 'Test',
+            // test summary from TRSS extract()
+            testSummary: {
+                total,
+                executed,
+                passed,
+                failed,
+                disabled,
+                skipped,
+                data: 'TRSS',
+            },
         };
     }
 }
