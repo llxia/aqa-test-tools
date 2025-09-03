@@ -1,0 +1,27 @@
+{
+    "name": "mcp",
+    "version": "1.0.0",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "node dist/index.js",
+        "dev": "tsx src/index.js",
+        "inspector": "npx @modelcontextprotocol/inspector"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "Apache License Version 2.0",
+    "description": "",
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.17.4",
+        "dotenv": "^17.2.1",
+        "express": "^5.1.0",
+        "zod": "^3.25.76"
+    },
+    "devDependencies": {
+        "@types/node": "^24.3.0",
+        "tsx": "^4.20.5",
+        "typescript": "^5.9.2"
+    }
+}
